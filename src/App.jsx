@@ -23,7 +23,7 @@ export default function App() {
       )
     );
   };
-
+    const eliminarTarea =(id) => (setTareas(tareas.filter((tarea) => tarea.id !== id)))
     console.log(tareas.map((tarea) => tarea.texto))
 
   return (
@@ -50,6 +50,7 @@ export default function App() {
             key={tarea.id}
             tarea={tarea}
             toggleComplete={toggleComplete}
+            eliminarTarea={eliminarTarea}
           />
         ))}
       </div>
