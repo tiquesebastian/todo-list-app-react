@@ -22,9 +22,17 @@ export default function App() {
         tarea.id === id ? { ...tarea, completada: !tarea.completada } : tarea
       )
     );
-  };
+};
     const eliminarTarea =(id) => (setTareas(tareas.filter((tarea) => tarea.id !== id)))
     console.log(tareas.map((tarea) => tarea.texto))
+
+    const editarTarea = (id) => {
+    const tareaAEditar = tareas.find((t) => t.id === id);
+    if (tareaAEditar) {
+    setInput(tareaAEditar.texto); // Pone el texto en el input
+    setTareas(tareas.filter((t) => t.id !== id)); // Quita la tarea para volverla a agregar
+  }
+};
 
   return (
     <div className="max-w-md mx-auto mt-10 ">
@@ -51,6 +59,7 @@ export default function App() {
             tarea={tarea}
             toggleComplete={toggleComplete}
             eliminarTarea={eliminarTarea}
+            editarTarea={editarTarea}
           />
         ))}
       </div>
