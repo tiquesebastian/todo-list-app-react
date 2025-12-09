@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import TodoItem from "./TodoItem";
 
-const API_URL = "http://localhost:3000/api/tasks";
+const API_URL =
+  "https://todo-list-app-react-production.up.railway.app/api/tasks";
 
 export default function App() {
   const [tareas, setTareas] = useState([]);
