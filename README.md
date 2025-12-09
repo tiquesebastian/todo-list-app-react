@@ -1,18 +1,85 @@
-# React + Vite
+# 📝 Todo List App - React + Express + MySQL
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación fullstack de gestión de tareas con frontend en React y backend en Express.js con MySQL.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Inicio Rápido
 
-## Expanding the ESLint configuration
+### Prerrequisitos
+- Node.js 18+
+- MySQL 8.0+
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Instalación
 
+**1. Backend:**
+```bash
+cd backend
+npm install
+# Configurar .env con credenciales de MySQL
+mysql -u root -p < database/schema.sql
+npm run dev
+```
 
+**2. Frontend:**
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-instalar dependencias: 
-npm install vite --save-dev
-npm install @heroicons/react
+---
+
+## 📁 Estructura del Proyecto
+
+```
+todo-list-app-react/
+├── backend/           # API REST (Express.js + MySQL)
+│   ├── src/
+│   ├── database/
+│   ├── docs/         # Documentación completa
+│   └── package.json
+│
+└── frontend/         # App React (Vite + Tailwind)
+    ├── src/
+    └── package.json
+```
+
+---
+
+## 🔌 API Endpoints
+
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| GET | `/api/tasks` | Obtener todas las tareas |
+| POST | `/api/tasks` | Crear nueva tarea |
+| PUT | `/api/tasks/:id` | Actualizar tarea |
+| PATCH | `/api/tasks/:id/toggle` | Alternar estado |
+| DELETE | `/api/tasks/:id` | Eliminar tarea |
+
+---
+
+## 🌐 Despliegue
+
+- **Frontend**: Vercel
+- **Backend + MySQL**: Railway
+
+Ver `backend/docs/DEPLOYMENT-GUIDE.md` para instrucciones completas.
+
+---
+
+## 📚 Documentación Completa
+
+Consulta la carpeta `backend/docs/` para:
+- Guía de despliegue detallada
+- Documentación de la API
+- Ejemplos de uso
+- Solución de problemas
+
+---
+
+## 🛠️ Tecnologías
+
+**Frontend**: React 19, Vite 7, Tailwind CSS 4
+**Backend**: Express.js 4, MySQL2, Helmet, CORS
+**Database**: MySQL 8.0+
